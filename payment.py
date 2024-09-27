@@ -66,6 +66,9 @@ def pay(id):
     span.log_kv({'id': id})
     span.log_kv({'cart': cart})
 
+
+    test1 = requests.get('http://{user}:{userPort}/check/{id}'.format(user=USER, userPort=USER_PORT, id=id))
+    print(test1)
     # check user exists
     try:
         req = requests.get('http://{user}:{userPort}/check/{id}'.format(user=USER, userPort=USER_PORT, id=id))
