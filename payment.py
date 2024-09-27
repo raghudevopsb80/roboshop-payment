@@ -63,8 +63,8 @@ def pay(id):
 
     # add some log info to the active trace
     span = ot.tracer.active_span
-    span.log_kv({'id': id})
-    span.log_kv({'cart': cart})
+#     span.log_kv({'id': id})
+#     span.log_kv({'cart': cart})
 
 
     test1 = requests.get('http://{user}:{userPort}/check/{id}'.format(user=USER, userPort=USER_PORT, id=id))
