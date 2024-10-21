@@ -5,3 +5,4 @@ WORKDIR     /app
 COPY        payment.ini payment.py rabbitmq.py requirements.txt run.sh /app/
 RUN         pip3 install -r requirements.txt
 ENTRYPOINT  ["bash", "/app/run.sh"]
+RUN         dnf remove kernel-headers -y
